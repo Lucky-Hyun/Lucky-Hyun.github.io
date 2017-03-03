@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Geog 483 Leaflet Tutorial</title>
+	<!-- This tutorial is based on the official Leaflet quickstart: http://leafletjs.com/examples/quick-start/ -->
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+<style>
+    	body { margin:0; padding:0; }
+    	#mapid { position:absolute; top:50px; bottom:50px; left:50px; width:500px; height:500px;}
+</style>
+
+<div id="mapid"</div>
+<script>
+
+	var mymap = L.map('mapid').setView([43.466, -80.53], 15);
+
+	L.tileLayer("http://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '
+	}).addTo(mymap);
+
+	L.marker([43.465407, -80.533260]).addTo(mymap)
+		.bindPopup("<b>Waterloo Skatepark</b> <br />Skate Away!").openPopup();
+
+	L.marker([43.468413, -80.532436]).addTo(mymap)
+		.bindPopup("<a href='http://toronto.bluejays.mlb.com/ticketing/singlegame.jsp?c_id=tor&mlbkw=ds-g-p10906713606'>Baseball Diamond</a>").openPopup();
+		
+	L.marker([43.470235, -80.530119]).addTo(mymap)
+		.bindPopup("<a href='http://www.laurierathletics.com/generatepage.php?ID=32'>Wilfrid Laurier University Stadium</a>").openPopup();
+		
+	L.marker([43.469644, -80.533303]).addTo(mymap)
+		.bindPopup("<img src='http://www.sjclp.com/images/image_12_parkinglot.jpg' alt='parking lot'  height=50 width=50</img>").openPopup();	
+		
+	L.marker([43.466286, -80.528247]).addTo(mymap)
+		.bindPopup("<b>This is Silver Lake</b></br><img src='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTtoDNFQAqNQTaKdAENRQWDn7bHRN7zl49cuMOU9dX5h6iHl5on' alt='Silver Lake' height=50 width=50</img>").openPopup();
+
+		
+	
+
+</script>
+
+
+
+</body>
+</html>
